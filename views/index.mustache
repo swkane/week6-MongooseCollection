@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Your Record Collection</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h3>Your Record Collection</h3>
+    </header>
+    <main>
+      <h5>Add a Record</h5>
+      <form class="add-record" action="/add" method="post">
+        <label for="album">Album Name: </label>
+        <input type="text" name="album" value=""><br><br>
+        <label for="artist">Artist Name: </label>
+        <input type="text" name="artist" value=""><br><br>
+        <label for="tracks">Tracks: </label>
+        <input type="text" name="tracks" value=""><br><br>
+        <label for="year">Year Released: </label>
+        <input type="text" name="year" value=""><br><br>
+        <label for="totalTracks">Number of Total Tracks: </label>
+        <input type="text" name="totalTracks" value=""><br><br>
+        <button type="submit" name="submit">Add a Record</button>
+      </form>
+      <hr>
+      <h4>Your Collection</h4>
+      <section class="results">
+        {{#records}}
+        <div class="record">
+          <p>{{name}}</p>
+          <p>{{artist}}</p>
+          {{#trackNames}}
+          <p>{{.}}</p>
+          {{/trackNames}}
+          <p>{{albumInfo.yearReleased}}</p>
+          <p>{{albumInfo.numberOfTracks}}</p>
+          <button type="button" name="edit">Edit</button> <button type="button" name="delete">Delete</button>
+        </div>
+        {{/records}}
+        <!-- <div class="record">
+          <p>Album</p>
+          <p>Artist</p>
+          <p>Track 1, Track 2, Track 3</p>
+          <p>Year</p>
+          <p>Number of Tracks</p>
+          <button type="button" name="edit">Edit</button> <button type="button" name="delete">Delete</button>
+        </div>
+        <div class="record">
+          <p>Album</p>
+          <p>Artist</p>
+          <p>Track 1, Track 2, Track 3</p>
+          <p>Year</p>
+          <p>Number of Tracks</p>
+          <button type="button" name="edit">Edit</button> <button type="button" name="delete">Delete</button>
+        </div>
+        <div class="record">
+          <p>Album</p>
+          <p>Artist</p>
+          <p>Track 1, Track 2, Track 3</p>
+          <p>Year</p>
+          <p>Number of Tracks</p>
+          <button type="button" name="edit">Edit</button> <button type="button" name="delete">Delete</button>
+        </div> -->
+      </section>
+    </main>
+  </body>
+</html>
