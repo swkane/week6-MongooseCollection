@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 const qs = require('qs');
 const addRecordController = require('./controllers/add-record');
 const deleteRecordController = require('./controllers/delete-record');
+const editRecordController = require('./controllers/edit-record');
 
 // Mustache Boiler Plate
 app.engine('mustache', mustacheExpress());
@@ -20,9 +21,10 @@ app.set('view engine', 'mustache');
 // Link static sheets - css/client-side js
 app.use(express.static('public'));
 
-// addRecordController
+// *RecordControllers
 app.use('/add', addRecordController);
 app.use('/delete', deleteRecordController);
+app.use('/edit', editRecordController);
 
 // Get info from Mongo
 app.get('/', function(req, res) {

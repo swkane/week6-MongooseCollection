@@ -1,0 +1,32 @@
+<!-- Create a view where someone can edit an existing record -->
+<!-- Adjust form action and values of form inputs -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Your Record</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h3>Your Record Collection</h3>
+    </header>
+    <main>
+      <h5>Add a Record</h5>
+      <form class="edit-record" action="/edit/{{name}}/edit-record" method="post">
+        <label for="album">Album Name: </label>
+        <input type="text" name="album" value="{{name}}"><br><br>
+        <label for="artist">Artist Name: </label>
+        <input type="text" name="artist" value="{{artist}}"><br><br>
+        <label for="tracks">Tracks: </label>
+        <input type="text" name="tracks" value="{{trackNames}}"><br><br>
+        <label for="year">Year Released: </label>
+        <input type="text" name="year" value="{{albumInfo.yearReleased}}"><br><br>
+        <label for="totalTracks">Number of Total Tracks: </label>
+        <input type="text" name="totalTracks" value="{{albumInfo.numberOfTracks}}"><br><br>
+        <button type="submit" name="submit">Add a Record</button>
+      </form>
+    </main>
+  </body>
+</html>
