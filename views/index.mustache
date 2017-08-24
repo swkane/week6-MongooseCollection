@@ -36,7 +36,7 @@
           {{/trackNames}}
           <p>{{albumInfo.yearReleased}}</p>
           <p>{{albumInfo.numberOfTracks}}</p>
-          <button type="button" name="edit">Edit</button> <button type="button" name="delete">Delete</button>
+          <button type="button" name="edit_{{name}}">Edit</button> <a href="/delete/{{_id}}"><button type="button" name="delete">Delete</button></a>
         </div>
         {{/records}}
         <!-- <div class="record">

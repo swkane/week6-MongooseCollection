@@ -9,7 +9,8 @@ const MongoClient = require('mongodb').MongoClient;
 const Album = require('./models/album');
 const bodyParser = require('body-parser');
 const qs = require('qs');
-const addRecordController = require('./controllers/add-record')
+const addRecordController = require('./controllers/add-record');
+const deleteRecordController = require('./controllers/delete-record');
 
 // Mustache Boiler Plate
 app.engine('mustache', mustacheExpress());
@@ -21,6 +22,7 @@ app.use(express.static('public'));
 
 // addRecordController
 app.use('/add', addRecordController);
+app.use('/delete', deleteRecordController);
 
 // Get info from Mongo
 app.get('/', function(req, res) {
